@@ -22,7 +22,7 @@ $ cd robosys2025
 ```
 次のように数字を入力し、コマンドを実行します。
 ```
-$ echo 2004 | ./calendar
+$ echo 2004 | ./jp_calendar
 ```
 ## 実行結果
 
