@@ -1,19 +1,55 @@
 # robosys2025
-otameshi
 
-#plusコマンド
-- ![test](https://github.com/samechaaan/robosys2025/actions/workflows/test.yml/badge.svg)
-- 標準入力から読み込んだ数字を足す。
+## 西暦→年号変換プログラム
 
-#必要なソフトウェア
+##　概要
+ このプログラムは、標準入力された1868年~2025年までの西暦の数字を、明治元年~令和7年の和暦に変換するプログラムです。
+
+##準備
+- 事前にGitがインストールされていない場合、以下のコマンドを使用してください。
+```
+$ sudo apt install git
+```
+
+- 適当な場所でクローンを行います。
+```
+$ git clone https://github.com/samechaaan/robosys2025.git
+```
+##使用方法
+ まず、ディレクトリを移動します。以下のコマンドを入力してください。
+```
+$ cd robosys2025
+```
+次のように数字を入力し、コマンドを実行します。
+```
+$ echo 2004 | ./calendar
+```
+##実行結果
+
+###明治~2025年の間の西暦を入力したとき
+```
+平成16年
+```
+###明治以前の西暦を入力したとき
+```
+明治以前
+```
+###2025年以降の西暦を入力した場合
+```
+不明
+```
+
+
+##必要なソフトウェア
 - Python
     - テスト済みバージョン: 3.7 ~ 3.10
 
-#テスト環境
+###テスト環境
 - Ubuntu 24.04 LTS
 
 - このソフトウェアパッケージは，3条項BSDライセンスの下，再頒布および使用が許可されます．
 - このパッケージは，Ryuichi Ueda由来のコード（© 2025 Ryuichi Ueda）を利用しています．
 - このパッケージのコードは，下記のスライド（CC-BY-SA 4.0 by Ryuichi Ueda）のものを，本人の許可を得て自身の著作としたものです．
     - [ryuichiueda/my_slides robosys_2025](https://github.com/ryuichiueda/my_slides/tree/master/robosys_2025)
-- © 2025 Kanon Ode
+
+ © 2025 Kanon Ode
