@@ -17,5 +17,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install numpy          
       - name: Run test
+        env:
+          PYTHONIOENCODING: utf-8
         run: |
           bash -xv ./test.bash
