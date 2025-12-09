@@ -3,16 +3,26 @@
 # SPDX-License-Identifier: GPL-3.0-only
 
 ng () {
-        echo ${1}行目が違うよ
-        res=1                   #追加
+      echo ${1}行目が違うよ
+      res=1
 }
 
 res=0
 
-out=$(seq 5 | ./plus)
-[ "${out}" = 15 ] || ng "$LINENO"
+out=$(echo 2025 | python3 gengo.py)
+[ "${out}" = "令和7年" ] || ng "$LINENO"
 
-[ "${res}" = 0 ] && echo OK #通ったのが（人間に）分かるように表示
-echo OK
+out=$(echo 2019 | python3 gengo.py)
+[ "${out}" = "令和元年" ] || ng "$LINENO"
 
-exit $res     # このシェルスクリプトの終了ステータスを返して終了
+out=$(echo 1989 | python3 gengo.py)
+[ "${out}" = "平成元年" ] || ng "$LINENO"
+
+out=$(echo 1926 | python3 gengo.py)
+[ "${out}" = "昭和元年" ] || ng "$LINENO"
+
+out=$(echo 1868 | python3 gengo.py)
+[ "${out}" = "明治元年" ] || ng "$LINENO"
+
+[ "${res}" = 0 ] && echo OK
+exit $res
