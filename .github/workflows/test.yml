@@ -18,6 +18,8 @@ jobs:
 
     - uses: actions/checkout@v3
 
-    - name: All test
-
-      run: bash -xv ./test.bash
+    - name: Run test
+        env:
+          PYTHONIOENCODING: utf-8
+        run: |
+          bash -xv ./test.bash
