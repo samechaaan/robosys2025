@@ -8,6 +8,7 @@ seireki = int(sys.stdin.read())
 
 if seireki > 2025:
     gengo = "未来"
+    year_num = 0
 elif seireki >= 2019:
     gengo = "令和"
     year_num = seireki - 2018
