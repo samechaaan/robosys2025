@@ -6,14 +6,10 @@ export PYTHONIOENCODING=utf-8
 
 ng () {
       echo "${1}行目が違うよ"
-      echo "  期待した答え: [${2}]"
-      echo "  Pythonの答え: [${out}]"
       res=1
 }
 
 res=0
-
-# --- テスト実行（jp_calendar.py を呼び出すように変更！） ---
 
 out=$(echo 2026 | python3 jp_calendar | tr -d '\r')
 [ "${out}" = "不明" ] || ng "$LINENO" "不明"
@@ -36,6 +32,5 @@ out=$(echo 1868 | python3 jp_calendar | tr -d '\r')
 out=$(echo 1867 | python3 jp_calendar | tr -d '\r')
 [ "${out}" = "明治以前" ] || ng "$LINENO" "明治以前"
 
-# --- 結果判定 ---
 [ "$res" = 0 ] && echo OK
 exit $res
