@@ -1,6 +1,7 @@
 # robosys2025
 
 ## 西暦→和暦変換プログラム
+![test](https://github.com/samechaaan/robosys2025/actions/workflows/test.yml/badge.svg)
 
 ## 概要
  このプログラムは、標準入力された1868年～2025年までの西暦の数字を、明治元年～令和7年の和暦に変換するプログラムです。
