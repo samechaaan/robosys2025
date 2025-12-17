@@ -1,0 +1,48 @@
+#!/usr/bin/python3
+# SPDX-FileCopyrightText: 2024 Kanon Ode <s24c1028wf@s.chibakoudai.jp>
+# SPDX-License-Identifier:BSD-3-Clause
+
+import sys
+
+try:
+    # 前後の空白を削除して読み込む
+    raw_input = sys.stdin.read().strip()
+    if not raw_input:
+        # 空っぽなら何もせず終了
+        sys.exit(0)
+    
+    seireki = int(raw_input)
+except ValueError:
+    # 数字以外が来たらエラーで終了
+    sys.exit(1)
+
+if seireki > 2025:
+    gengo = "未来"
+    year_num = 0
+elif seireki >= 2019:
+    gengo = "令和"
+    year_num = seireki - 2018
+elif seireki >= 1989:
+    gengo = "平成"
+    year_num = seireki - 1988
+elif seireki >= 1926:
+    gengo = "昭和"
+    year_num = seireki - 1925
+elif seireki >= 1912:
+    gengo = "大正"
+    year_num = seireki - 1911
+elif seireki >= 1868:
+    gengo = "明治"
+    year_num = seireki - 1867
+else:
+    gengo = "明治以前"
+    year_num = 0
+
+if gengo == "未来":
+    print("不明")
+elif gengo == "明治以前":
+    print("明治以前")
+elif year_num == 1:
+    print(f"{gengo}元年")
+else:
+    print(f"{gengo}{year_num}年")
